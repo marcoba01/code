@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  
+  .required::after {
+          content: " *Required";
+          position: center;
+          color: red;
+          font-size: 16px;
+  }
+  .select {
+          padding: 8px 12px;
+          color: #ffffff;
+          background-color: transparent;
+          width: 100%;
+          height: auto;
+          margin-bottom: 20px;
+          border: 2px solid #fff;
+          cursor: pointer;
+          border-radius: 25px;
+
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><polygon points="0, 0 100, 0 50,50" style="fill:%23ffffff;"/></svg>');
+          background-position: right 10px top 50%;
+          background-repeat: no-repeat;
+          background-size: 10px;
+          padding-right: 30px;
+  }
+  .select.focus, select.select:hover {
+          outline: none;
+          border: 1px solid #ffffff;
+  }
+  .select option {
+          background: transparent;
+          color: black;
+  }
+  </style>
+</head>
+<body>
+<div class="hero">
+    <img src="HHH(logo).png" class="logo">
+</div>
+
+<div class="wrapper">
+<form id="loginForm" onsubmit="return validate()">
+  <br><br>
+  <h1>Therapist Login</h1>
+
+  <div class="input-box">
+  <input type="text" placeholder="Ex. John" id="first_name" name="first_name" required><br>
+  <label for="first_name" class="required">Therapist's First Name </label>
+  </div>
+  <div class="input-box">
+  <input type="text" placeholder="Ex. Doe" id="last_name" name="last_name" required><br>
+  <label for="last_name" class="required">Therapist's Last Name</label>
+  </div>
+  <div class="input-box">
+  <input type="password" placeholder="Ex. OT@1" id="password" name="password" required><br>
+  <label for="password" class="required">Therapist's Password</label>
+  </div>
+  <div class="input-box">
+  <input type="text" placeholder="Ex. 2468" id="id" name="id" required><br>
+  <label for="id" class="required">Therapist's ID # </label>
+  </div>
+  <div class="input-box">
+  <input type="tel" placeholder="Ex. 555-555-5555" id="phone" name="phone" required><br>
+  <label for="phone" class="required">Therapist's Phone No.</label>
+  </div>
+  <div class="input-box">
+  <input type="email" placeholder="Ex. HHH@OTs.com" id="email" name="email" required><br>
+  <label for="email">Therapist's Email</label>
+  </div>
+  <div class="checkbox">
+    <label for="emailConfirm">
+      <input type="checkbox" id="emailConfirm" name="emailConfirm"> Request Email Confirmation 
+    </label>
+  </div>
+
+  <select class="select" id="transaction" name="transaction" required>
+    <option disabled selected>Select A Transaction</option>
+    <option value="Search A Therapist's Account">Search A Therapist's Account</option>
+    <option value="Book A Client Session">Book A Client Session</option>
+    <option value="Update A Client's Records">Update A Client's Records</option>
+    <option value="Cancel A Patient's Session">Cancel A Patient's Session</option>
+    <option value="Request Medical Devices">Request Medical Devices</option>
+    <option value="Create A New Patient">Create A New Patient</option>
+  </select>
+
+  <button type="submit" class="btn">SUBMIT</button>
+  <button type="reset" class="reset">RESET</button>
+</div>
+</form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
