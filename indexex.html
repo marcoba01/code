@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  
+  .required::after {
+          content: " *Required";
+          position: center;
+          color: red;
+          font-size: 16px;
+  }
+  .select {
+          padding: 8px 12px;
+          color: #ffffff;
+          background-color: transparent;
+          width: 100%;
+          height: auto;
+          margin-bottom: 20px;
+          border: 2px solid #fff;
+          cursor: pointer;
+          border-radius: 25px;
+
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="50"><polygon points="0, 0 100, 0 50,50" style="fill:%23ffffff;"/></svg>');
+          background-position: right 10px top 50%;
+          background-repeat: no-repeat;
+          background-size: 10px;
+          padding-right: 30px;
+  }
+  .select.focus, select.select:hover {
+          outline: none;
+          border: 1px solid #ffffff;
+  }
+  .select option {
+          background: transparent;
+          color: black;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("photo2.jpg") no-repeat center fixed;
+    background-size: cover;
+    background-position: center;
+}
+.logo{
+    width:500px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px 50px;
+}
+.wrapper{
+    width: 420px;
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0);
+    box-shadow: 0 0 10px  rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper h1{
+    font-size: 36px;
+    text-align: center;
+    height: 100px;
+}
+
+.wrapper .input-box{
+    width: 100%;
+    height: 30px;
+    margin: 50px 0;
+    text-align: center;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 40px;
+    font-size: 16px;
+    color:#fff;
+    padding: 20px 40px 20px 20px;
+}
+
+.input-box input::placeholder{
+    color: #fff;
+}
+
+.input-box i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translate(-50%);
+    font-size: 20px;
+}
+.wrapper .checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    font-size: 14.5px;
+    margin: -5px 0 30px;
+}
+
+.select-btn{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: transparent;
+    box-shadow: 0 5px 10px rgb(255, 255, 255);
+}
+.select-btn .btn-text{
+    font-size: 17px;
+    font-weight: 400;
+    color: #ffffff;
+}
+.select-btn .arrow-dwn{
+    display: flex;
+    height: 21px;
+    width: 21px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    border-radius: 50%;
+    background: transparent;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+.select-btn.open .arrow-dwn{
+    transform: rotate(-180deg);
+}
+
+.checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1.5px solid #604f4f00;
+    transition: all 0.3s ease-in-out;
+}
+.item.checked .checkbox{
+    background-color: rgb(0, 89, 255);
+    border-color: #ffffff;
+}
+.checkbox .check-icon{
+    color: white;
+    font-size: 11px;
+    transform: scale(0);
+    transition: all 0.2s ease-in-out;
+}
+.item.checked .check-icon{
+    transform: scale(1);
+}
+
+.checkbox label input{
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.checkbox a{
+    color: transparent;
+    text-decoration: none;
+}
+
+.checkbox a:hover{
+    text-decoration: underline;
+}
+
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+.wrapper .reset{
+    margin-top: 10px;
+    width: 100%;
+    height: 35px;
+    background: #001a69;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 400;
+}
+  </style>
+</head>
+<body>
+<div class="hero">
+    <img src="HHH(logo).png" class="logo">
+</div>
+
+<div class="wrapper">
+<form id="loginForm" onsubmit="return validate()">
+  <br><br>
+  <h1>Therapist Login</h1>
+
+  <div class="input-box">
+  <input type="text" placeholder="Ex. John" id="first_name" name="first_name" required><br>
+  <label for="first_name" class="required">Therapist's First Name </label>
+  </div>
+  <div class="input-box">
+  <input type="text" placeholder="Ex. Doe" id="last_name" name="last_name" required><br>
+  <label for="last_name" class="required">Therapist's Last Name</label>
+  </div>
+  <div class="input-box">
+  <input type="password" placeholder="Ex. OT@1" id="password" name="password" required><br>
+  <label for="password" class="required">Therapist's Password</label>
+  </div>
+  <div class="input-box">
+  <input type="text" placeholder="Ex. 2468" id="id" name="id" required><br>
+  <label for="id" class="required">Therapist's ID # </label>
+  </div>
+  <div class="input-box">
+  <input type="tel" placeholder="Ex. 555-555-5555" id="phone" name="phone" required><br>
+  <label for="phone" class="required">Therapist's Phone No.</label>
+  </div>
+  <div class="input-box">
+  <input type="email" placeholder="Ex. HHH@OTs.com" id="email" name="email" required><br>
+  <label for="email">Therapist's Email</label>
+  </div>
+  <div class="checkbox">
+    <label for="emailConfirm">
+      <input type="checkbox" id="emailConfirm" name="emailConfirm"> Request Email Confirmation 
+    </label>
+  </div>
+
+  <select class="select" id="transaction" name="transaction" required>
+    <option disabled selected>Select A Transaction</option>
+    <option value="Search A Therapist's Account">Search A Therapist's Account</option>
+    <option value="Book A Client Session">Book A Client Session</option>
+    <option value="Update A Client's Records">Update A Client's Records</option>
+    <option value="Cancel A Patient's Session">Cancel A Patient's Session</option>
+    <option value="Request Medical Devices">Request Medical Devices</option>
+    <option value="Create A New Patient">Create A New Patient</option>
+  </select>
+
+  <button type="submit" class="btn">SUBMIT</button>
+  <button type="reset" class="reset">RESET</button>
+</div>
+</form>
+</div>
+<script>
+
+function validate() {
+
+  // Validate required fields
+if(!document.getElementById("first\_name").value) {
+    alert("First name is required");
+    return false;
+  }
+
+  if(!document.getElementById("last\_name").value) {
+    alert("Last name is required");
+    return false;
+  }  
+
+  // Validate password
+  var password = document.getElementById("password").value;
+  if(password.length > 8) {
+    alert("Password must be 8 characters or less");
+    return false;
+  }
+  if(!password.match(/[A-Z]/)) {
+    alert("Password must contain 1 uppercase letter");
+    return false;
+  }
+  if(!password.match(/[^A-Za-z0-9]/)) {
+    alert("Password must contain 1 special character");
+    return false;
+  }
+  if(!password.match(/[0-9]/)) {
+    alert("Password must contain 1 number");
+    return false;
+  }
+
+  // Validate ID
+  var id = document.getElementById("id").value;
+  if(id.length != 5) {
+    alert("ID must be 5 digits");
+    return false;
+  }
+
+  // Validate phone
+  var phone = document.getElementById("phone").value;
+  var regex = /^\d{10}$|^\d{3}[\s-]\d{3}[\s-]\d{4}$/;
+  if(!regex.test(phone)) {
+    alert("Invalid phone number format");
+    return false;
+  }
+
+  // Validate email if checked
+  if(document.getElementById("emailConfirm").checked) {
+    var email = document.getElementById("email").value;
+    if(!email.match(/.+@.+\..{3,6}$/)) {
+      alert("Invalid email format");
+      return false;
+    }
+  }
+
+  // If all valid, call verify function
+  verify();
+
+  return false; // Prevent form submit
+}
+
+function verify() {
+  
+  // Mock verification
+  var validUser = {
+    firstName: "John",
+    lastName: "Doe",
+    id: "12345",
+    password: "Njit$2",
+    phone: "123-456-7890",
+    email: "john@example.com"
+  };
+
+  var firstName = document.getElementById("first_name").value;
+  var lastName = document.getElementById("last_name").value;
+  var id = document.getElementById("id").value;
+  var phone = document.getElementById("phone").value;
+  var email = document.getElementById("email").value;
+
+  if(firstName !== validUser.firstName || 
+     lastName !== validUser.lastName ||
+     id !== validUser.id ||
+     phone !== validUser.phone ||
+     email !== validUser.email) {
+    alert("User " + firstName + " " + lastName + " not found. Please try again");
+    return false;
+  }
+
+  let selectedTransaction = document.getElementById("transaction");
+  let transactionName = selectedTransaction.options[selectedTransaction.selectedIndex].text;
+  let alertMsg = "Welcome " + firstName + " " + lastName + "! Selected:" + transactionName;
+  alert(alertMsg);
+  return true;
+}
+
+</script>
+</body>
+</html>
